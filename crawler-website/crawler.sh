@@ -55,8 +55,8 @@ for site in ${sites[*]}; do
 	echo "${site} in ${nspws}"
 	echo "-------------------------------------------------"
 
-	httrack "https://${site}/" -O "${ptai}/${nspws}" -v
-	tar cvfz ${nspws}.tar.gz ${nspws}
+	httrack "https://${site}/" -O "${ptai}/doc/${nspws}" -v
+	tar cvfz ./tar/${nspws}.tar.gz ./doc/${nspws}
 done
 
 # sites=("www.jfrog.com")
@@ -65,5 +65,6 @@ done
 
 # tar cfz ${site}.tar.gz ${site}
 
-du -sh ${ptai}/*
+du -sh ${ptai}/doc/*
+du -sh ${ptai}/tar/*
 
